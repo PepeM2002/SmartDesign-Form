@@ -5,331 +5,309 @@
         <meta charset="UTF-8">
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
         <title>Cotizador </title>
         <script src="./actions/selection.js"></script>
-=======
+
         <title>Cotizador</title>
->>>>>>> 2261b4145c30b0b5660335ed148e48d3c885b6ca
+
 </head>
 
-<body class="bg-gray-50 min-h-screen">
-        <main class="mx-auto mt-12 max-w-4xl"></main>
-        <h1 class="text-3xl font-bold text-center mb-8">
-                Cotizador - SmartDesign
-        </h1>
-        <form class="bg-white rounded-lg shadow-md p-6 space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<body class="bg-[#E7F5FE] min-h-screen flex items-center justify-center">
+        <main class="mx-auto mt-12 text-center  w-full">
+                <h1 class="text-3xl font-bold  mb-8">
+                        Cotizador - SmartDesign
+                </h1>
+                <form
+                        class="bg-white rounded-lg  max-w-[90%] shadow-md shadow-blue-200 shadow-xl  p-5 space-y-6 mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="flex flex-col gap-2">
+                                        <label for="nombre" class="text-lg font-semibold text-gray-700">Nombre del
+                                                paciente</label>
+                                        <input id="nombre" type="text" placeholder="Ingresa tu nombre"
+                                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                        <label for="fecha" class="text-lg font-semibold text-gray-700">Fecha</label>
+                                        <input id="fecha" type="date"
+                                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
+                                </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="flex flex-col gap-2">
+                                        <label for="doctor" class="text-lg font-semibold text-gray-700">Valoración
+                                                realizada por
+                                                el Dr</label>
+                                        <select id="doctor"
+                                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+                                                <option value="">Selecciona el doctor</option>
+                                                <option value="dr1">Gianmarco Terry</option>
+                                        </select>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                        <label for="expediente" class="text-lg font-semibold text-gray-700">Expediente
+                                                N<sup>o</sup></label>
+                                        <input id="expediente" type="text" placeholder="Ingresa el número de expediente"
+                                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
+                                </div>
+                        </div>
                         <div class="flex flex-col gap-2">
-                                <label for="nombre" class="text-lg font-semibold text-gray-700">Nombre del
-                                        paciente</label>
-                                <input id="nombre" type="text" placeholder="Ingresa tu nombre"
+                                <label for="correo" class="text-lg font-semibold text-gray-700">Correo
+                                        Electrónico</label>
+                                <input id="correo" type="email" placeholder="Ingresa tu correo"
                                         class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
                         </div>
                         <div class="flex flex-col gap-2">
-                                <label for="fecha" class="text-lg font-semibold text-gray-700">Fecha</label>
-                                <input id="fecha" type="date"
-                                        class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
+                                <label for="observaciones"
+                                        class="text-lg font-semibold text-gray-700">Observaciones</label>
+                                <textarea id="observaciones" name="observaciones" rows="3"
+                                        class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"></textarea>
                         </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="flex flex-col gap-2">
-                                <label for="doctor" class="text-lg font-semibold text-gray-700">Valoración realizada por
-                                        el Dr</label>
-                                <select id="doctor"
-                                        class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
-                                        <option value="">Selecciona el doctor</option>
-                                        <option value="dr1">Gianmarco Terry</option>
-                                </select>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                                <label for="expediente" class="text-lg font-semibold text-gray-700">Expediente
-                                        N<sup>o</sup></label>
-                                <input id="expediente" type="text" placeholder="Ingresa el número de expediente"
-                                        class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
-                        </div>
-                </div>
-                <div class="flex flex-col gap-2">
-                        <label for="correo" class="text-lg font-semibold text-gray-700">Correo Electrónico</label>
-                        <input id="correo" type="email" placeholder="Ingresa tu correo"
-                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
-                </div>
-                <div class="flex flex-col gap-2">
-                        <label for="observaciones" class="text-lg font-semibold text-gray-700">Observaciones</label>
-                        <textarea id="observaciones" name="observaciones" rows="3"
-                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"></textarea>
-                </div>
-                <div class="text-center text-blue-800 font-bold text-xl mb-4">
-                        ODONTOGRAMA
-                </div>
-
-
-                <div class="grid grid-cols-16 gap-1 text-sm text-blue-700 text-center mb-1">
-                        <span>18</span><span>17</span><span>16</span><span>15</span><span>14</span><span>13</span><span>12</span><span>11</span>
-                        <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
-                </div>
-                <div class="grid grid-cols-16 gap-1 mb-4">
-
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 18" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 17" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 16" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 15" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 14" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 13" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 12" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 11" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 21" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 22" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 23" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 24" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 25" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 26" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 27" class="h-8" />
-                        </div>
-                        <div class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
-                                <img src="/tooth.svg" alt="Diente 28" class="h-8" />
-                        </div>
-                </div>
-
-
-                <div class="grid grid-cols-16 gap-1 text-sm text-blue-700 text-center mb-1">
-                        <span>48</span><span>47</span><span>46</span><span>45</span><span>44</span><span>43</span><span>42</span><span>41</span>
-                        <span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span>
-                </div>
-                <div class="grid grid-cols-16 gap-1 mb-4">
-
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 48" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 47" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 46" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 45" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 44" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 43" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 42" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 41" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 31" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 32" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 33" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 34" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 35" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 36" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 37" class="h-8 rotate-180" /></div>
-                        <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
-                                        src="/tooth.svg" alt="Diente 38" class="h-8 rotate-180" /></div>
-                </div>
-
-<<<<<<< HEAD
-
-
-=======
-                
->>>>>>> 2261b4145c30b0b5660335ed148e48d3c885b6ca
-                <div class="text-center text-blue-800 font-bold text-xl mb-4">
-                        PRESUPUESTO
-                </div>
-
-
-                <div class="flex flex-wrap items-end gap-3">
-                        <div>
-                                <label for="tratamiento" class="block text-sm font-medium text-gray-700 mb-1">
-                                        Selecciona un tratamiento
-                                </label>
-                                <select id="tratamiento-select" name="tratamiento"
-                                        class="w-full  border border-gray-300 bg-gray-100 py-2 px-2 text-sm rounded focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
-                                        <option value="" selected>-- Selecciona una opción --</option>
-                                </select>
-                        </div>
-                        <div>
-                                <label for="precio" class="block text-sm font-medium text-gray-700 mb-1">Precio</label>
-                                <input type="number" id="precio" name="precio" placeholder="Ingresa el precio"
-                                        class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition w-32" />
-                        </div>
-                        <div>
-                                <label for="descuento"
-                                        class="block text-sm font-medium text-gray-700 mb-1">Descuento</label>
-                                <input type="number" id="descuento" name="descuento" placeholder="Ingresa el descuento"
-                                        class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition w-32" />
-                        </div>
-                        <div class="text-lg font-bold text-blue-700 ml-auto">
-                                Total: <span id="total">0</span>
-                        </div>
-                </div>
-                <script>
-                        const precioInput = document.getElementById('precio');
-                        const descuentoInput = document.getElementById('descuento');
-                        const totalSpan = document.getElementById('total');
-
-                        function calcularTotal() {
-                                const precio = parseFloat(precioInput.value) || 0;
-                                const descuento = parseFloat(descuentoInput.value) || 0;
-                                const total = Math.max(precio - descuento, 0);
-                                totalSpan.textContent = total.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' });
-                        }
-
-                        precioInput.addEventListener('input', calcularTotal);
-                        descuentoInput.addEventListener('input', calcularTotal);
-
-
-                        const addButton = document.createElement('button');
-                        addButton.textContent = 'Agregar Tratamiento';
-
-                        function addTratamiento() {
-
-
-                        }
-                </script>
-                <hr>
-                <div class="grid grid-cols-3 text-center items-start mb-4">
-
-                        <div>
-                                <p class="block text-sm font-medium text-gray-700 mb-1">Total:</p>
-                                <p id="total" class="text-gray-800 font-bold text-lg">$0</p>
+                        <div class="text-center text-blue-800 font-bold text-xl mb-4">
+                                ODONTOGRAMA
                         </div>
 
-                        <div>
-                                <p class="block text-sm font-medium text-blue-800">Total con Descuento:</p>
-                                <p id="total-descuento" class="text-blue-800 font-bold text-lg">$ 0</p>
+
+                        <div class="grid grid-cols-16 gap-1 text-sm text-blue-700 text-center mb-1">
+                                <span>18</span><span>17</span><span>16</span><span>15</span><span>14</span><span>13</span><span>12</span><span>11</span>
+                                <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
+                        </div>
+                        <div class="grid grid-cols-16 gap-1 mb-4">
+
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 18" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 17" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 16" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 15" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 14" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 13" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 12" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 11" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 21" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 22" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 23" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 24" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 25" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 26" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 27" class="h-8" />
+                                </div>
+                                <div
+                                        class="aspect-square border-2 border-blue-500 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 28" class="h-8" />
+                                </div>
                         </div>
 
-                        <div>
-                                <p class="block text-sm font-medium text-blue-800 ">Tipo de Descuento</p>
-                                <select id="tipo-descuento"
-                                        class="w-full border border-gray-300 bg-gray-100 text-gray-700 rounded p-4 h-16 focus:outline-none">
-                                        <option value="">Seleccione</option>
-                                        <option value="internet">Internet</option>
-                                        <option value="especial">Especial</option>
-                                        <option value="facebook">Facebook</option>
-                                        <option value="instagram">Instagram</option>
-                                        <option value="doctora">Doctoralia</option>
 
-                                        <option value="otro">Otro</option>
-                                </select>
+                        <div class="grid grid-cols-16 gap-1 text-sm text-blue-700 text-center mb-1">
+                                <span>48</span><span>47</span><span>46</span><span>45</span><span>44</span><span>43</span><span>42</span><span>41</span>
+                                <span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span>
                         </div>
-                </div>
+                        <div class="grid grid-cols-16 gap-1 mb-4">
 
-                <p class="block text-sm font-medium text-blue-800">Descuento Total: <span id="descuento-total"
-                                class="font-bold">$ 0</span></p>
-                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 48" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 47" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 46" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 45" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 44" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 43" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 42" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 41" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 31" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 32" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 33" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 34" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 35" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 36" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 37" class="h-8 rotate-180" />
+                                </div>
+                                <div
+                                        class="aspect-square border border-gray-300 rounded flex items-center justify-center">
+                                        <img src="/tooth.svg" alt="Diente 38" class="h-8 rotate-180" />
+                                </div>
+                        </div>
 
 
-                <div class="font-sans text-gray-800 p-8">
-                        <ul class="list-disc pl-5 space-y-2 text-sm text-blue-800">
-                                <li>
-                                        El costo de las consultas ya se encuentra incluido en los presupuestos.
-                                </li>
-                                <li>
-                                        No se incluyen tratamientos adicionales que pudiesen ser necesarios y que
-                                        no estén reflejados en el presente presupuesto.
-                                </li>
-                                <li>
-                                        Los descuentos correspondientes ya están aplicados y reflejados en el
-                                        costo de cada tratamiento.
-                                </li>
-                        </ul>
+
+                        <div class="text-center text-blue-800 font-bold text-xl mb-4">
+                                PRESUPUESTO
+                        </div>
+
+
+                        <div class="flex flex-wrap items-end gap-3">
+                                <div>
+                                        <label for="tratamiento" class="block text-sm font-medium text-gray-700 mb-1">
+                                                Selecciona un tratamiento
+                                        </label>
+                                        <select id="tratamiento-select" name="tratamiento"
+                                                class="w-full  border border-gray-300 bg-gray-100 py-2 px-2 text-sm rounded focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+                                                <option value="" selected>-- Selecciona una opción --</option>
+                                        </select>
+                                </div>
+                                <div>
+                                        <label for="precio"
+                                                class="block text-sm font-medium text-gray-700 mb-1">Precio</label>
+                                        <input type="number" id="precio" name="precio" placeholder="Ingresa el precio"
+                                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition w-32" />
+                                </div>
+                                <div>
+                                        <label for="descuento"
+                                                class="block text-sm font-medium text-gray-700 mb-1">Descuento</label>
+                                        <input type="number" id="descuento" name="descuento"
+                                                placeholder="Ingresa el descuento"
+                                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition w-32" />
+                                </div>
+                                <div class="text-lg font-bold text-blue-700 ml-auto">
+                                        Total: <span id="total">0</span>
+                                </div>
+                        </div>
+                        <script>
+                                const precioInput = document.getElementById('precio');
+                                const descuentoInput = document.getElementById('descuento');
+                                const totalSpan = document.getElementById('total');
+
+                                function calcularTotal() {
+                                        const precio = parseFloat(precioInput.value) || 0;
+                                        const descuento = parseFloat(descuentoInput.value) || 0;
+                                        const total = Math.max(precio - descuento, 0);
+                                        totalSpan.textContent = total.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' });
+                                }
+
+                                precioInput.addEventListener('input', calcularTotal);
+                                descuentoInput.addEventListener('input', calcularTotal);
+
+
+                                const addButton = document.createElement('button');
+                                addButton.textContent = 'Agregar Tratamiento';
+
+                                function addTratamiento() {
+
+
+                                }
+                        </script>
+                        <hr>
+                        <div class="grid grid-cols-3 text-center items-start mb-4">
+
+                                <div>
+                                        <p class="block text-sm font-medium text-gray-700 mb-1">Total:</p>
+                                        <p id="total" class="text-gray-800 font-bold text-lg">$0</p>
+                                </div>
+
+                                <div>
+                                        <p class="block text-sm font-medium text-blue-800">Total con Descuento:</p>
+                                        <p id="total-descuento" class="text-blue-800 font-bold text-lg">$ 0</p>
+                                </div>
+
+                                <div>
+                                        <p class="block text-sm font-medium text-blue-800 ">Tipo de Descuento</p>
+                                        <select id="tipo-descuento"
+                                                class="w-full border border-gray-300 bg-gray-100 text-gray-700 rounded p-4 h-16 focus:outline-none">
+                                                <option value="">Seleccione</option>
+                                                <option value="internet">Internet</option>
+                                                <option value="especial">Especial</option>
+                                                <option value="facebook">Facebook</option>
+                                                <option value="instagram">Instagram</option>
+                                                <option value="doctora">Doctoralia</option>
+
+                                                <option value="otro">Otro</option>
+                                        </select>
+                                </div>
+                        </div>
+
+                        <p class="block text-sm font-medium text-blue-800">Descuento Total: <span id="descuento-total"
+                                        class="font-bold">$ 0</span></p>
+                        </div>
 
                         <div class="text-center mt-20 mb-10 text-xl font-semibold text-blue-700">
                                 FORMA DE PAGO
                         </div>
 
-                <hr>
-                      <div class="grid grid-cols-3 text-center items-start mb-4">
-                        <!-- Total -->
-                        <div>
-                        <p class="block text-sm font-medium text-gray-700 mb-1">Total:</p>
-                        <p id="total" class="text-gray-800 font-bold text-lg">$0</p>
-                        </div>
-
-                        <!-- Total con Descuento -->
-                        <div>
-                        <p class="block text-sm font-medium text-blue-800">Total con Descuento:</p>
-                        <p id="total-descuento" class="text-blue-800 font-bold text-lg">$ 0</p>
-                        </div>
-
-                        <!-- Tipo de Descuento -->
-                        <div>
-                        <p class="block text-sm font-medium text-blue-800 ">Tipo de Descuento</p>
-                        <select id="tipo-descuento" class="w-full border border-gray-300 bg-gray-100 text-gray-700 rounded p-4 h-16 focus:outline-none">
-                        <option value="">Seleccione</option>
-                        <option value="internet">Internet</option>
-                        <option value="especial">Especial</option>
-                        <option value="facebook">Facebook</option>
-                        <option value="instagram">Instagram</option>
-                        <option value="doctora">Doctoralia</option>
-                        
-                        <option value="otro">Otro</option>
-                        </select>
-                        </div>
-                        </div>
-
-                        <!-- Descuento Total -->
-                        <p class="block text-sm font-medium text-blue-800">Descuento Total: <span id="descuento-total" class="font-bold">$ 0</span></p>
-                        </div>
-
-                        <!-- Forma de Pago -->
-
-                 <div class="font-sans text-gray-800 p-8">
-                        <ul class="list-disc pl-5 space-y-2 text-sm text-blue-800">
-                        <li>
-                        El costo de las consultas ya se encuentra incluido en los presupuestos.
-                        </li>
-                        <li>
-                        No se incluyen tratamientos adicionales que pudiesen ser necesarios y que
-                        no estén reflejados en el presente presupuesto.
-                        </li>
-                        <li>
-                        Los descuentos correspondientes ya están aplicados y reflejados en el
-                        costo de cada tratamiento.
-                        </li>
-                        </ul>
-
-                        <div class="text-center mt-20 mb-10 text-xl font-semibold text-blue-700">
-                        FORMA DE PAGO
-                        </div>
-                        <!-- Fin de pago-->
-        </form>
+                </form>
         </main>
 </body>
 
