@@ -5,8 +5,12 @@
         <meta charset="UTF-8">
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
         <title>Cotizador </title>
         <script src="./actions/selection.js"></script>
+=======
+        <title>Cotizador</title>
+>>>>>>> 2261b4145c30b0b5660335ed148e48d3c885b6ca
 </head>
 
 <body class="bg-gray-50 min-h-screen">
@@ -157,8 +161,12 @@
                                         src="/tooth.svg" alt="Diente 38" class="h-8 rotate-180" /></div>
                 </div>
 
+<<<<<<< HEAD
 
 
+=======
+                
+>>>>>>> 2261b4145c30b0b5660335ed148e48d3c885b6ca
                 <div class="text-center text-blue-800 font-bold text-xl mb-4">
                         PRESUPUESTO
                 </div>
@@ -266,6 +274,61 @@
                                 FORMA DE PAGO
                         </div>
 
+                <hr>
+                      <div class="grid grid-cols-3 text-center items-start mb-4">
+                        <!-- Total -->
+                        <div>
+                        <p class="block text-sm font-medium text-gray-700 mb-1">Total:</p>
+                        <p id="total" class="text-gray-800 font-bold text-lg">$0</p>
+                        </div>
+
+                        <!-- Total con Descuento -->
+                        <div>
+                        <p class="block text-sm font-medium text-blue-800">Total con Descuento:</p>
+                        <p id="total-descuento" class="text-blue-800 font-bold text-lg">$ 0</p>
+                        </div>
+
+                        <!-- Tipo de Descuento -->
+                        <div>
+                        <p class="block text-sm font-medium text-blue-800 ">Tipo de Descuento</p>
+                        <select id="tipo-descuento" class="w-full border border-gray-300 bg-gray-100 text-gray-700 rounded p-4 h-16 focus:outline-none">
+                        <option value="">Seleccione</option>
+                        <option value="internet">Internet</option>
+                        <option value="especial">Especial</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="doctora">Doctoralia</option>
+                        
+                        <option value="otro">Otro</option>
+                        </select>
+                        </div>
+                        </div>
+
+                        <!-- Descuento Total -->
+                        <p class="block text-sm font-medium text-blue-800">Descuento Total: <span id="descuento-total" class="font-bold">$ 0</span></p>
+                        </div>
+
+                        <!-- Forma de Pago -->
+
+                 <div class="font-sans text-gray-800 p-8">
+                        <ul class="list-disc pl-5 space-y-2 text-sm text-blue-800">
+                        <li>
+                        El costo de las consultas ya se encuentra incluido en los presupuestos.
+                        </li>
+                        <li>
+                        No se incluyen tratamientos adicionales que pudiesen ser necesarios y que
+                        no estén reflejados en el presente presupuesto.
+                        </li>
+                        <li>
+                        Los descuentos correspondientes ya están aplicados y reflejados en el
+                        costo de cada tratamiento.
+                        </li>
+                        </ul>
+
+                        <div class="text-center mt-20 mb-10 text-xl font-semibold text-blue-700">
+                        FORMA DE PAGO
+                        </div>
+                        <!-- Fin de pago-->
         </form>
         </main>
 </body>
