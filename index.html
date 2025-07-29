@@ -5,7 +5,8 @@
         <meta charset="UTF-8">
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cotizador Pepe</title>
+        <title>Cotizador </title>
+        <script src="./actions/selection.js"></script>
 </head>
 
 <body class="bg-gray-50 min-h-screen">
@@ -155,10 +156,9 @@
                         <div class="aspect-square border border-gray-300 rounded flex items-center justify-center"><img
                                         src="/tooth.svg" alt="Diente 38" class="h-8 rotate-180" /></div>
                 </div>
-                <!-- 
-Presupuesto -->
 
-                <!-- perro -->
+
+
                 <div class="text-center text-blue-800 font-bold text-xl mb-4">
                         PRESUPUESTO
                 </div>
@@ -169,150 +169,9 @@ Presupuesto -->
                                 <label for="tratamiento" class="block text-sm font-medium text-gray-700 mb-1">
                                         Selecciona un tratamiento
                                 </label>
-                                <select id="tratamiento" name="tratamiento"
+                                <select id="tratamiento-select" name="tratamiento"
                                         class="w-full  border border-gray-300 bg-gray-100 py-2 px-2 text-sm rounded focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
                                         <option value="" selected>-- Selecciona una opción --</option>
-                                        <option>Ameloplastía y/o Ajuste Oclusal Selectivo</option>
-                                        <option>Aparato de Expansión HYRAX</option>
-                                        <option>Blanqueamiento Dental con Sistema de Fundas Para Uso Nocturno (15 Noches
-                                                Aprox.)
-                                        </option>
-                                        <option>Blanqueamiento Dental Express (Sistema de 1 Sola Sesión en Consultorio)
-                                        </option>
-                                        <option>Build up / Reconstrucción Pre-protésica con Resina Híbrida Submicrónica
-                                        </option>
-                                        <option>Carilla de Porcelana (Frente Dental Estético de Cerámica)</option>
-                                        <option>Carilla de Resina Híbrida Submicrónica (Frente Dental Estético de
-                                                Resina)
-                                        </option>
-                                        <option>Cierre de Diastema con Resina Híbrida Submicrónica de Alta Estética
-                                                (Cierre de
-                                                Espacio Interdental)</option>
-                                        <option>Cirugía Gingival para Alargamiento de Corona</option>
-                                        <option>Cirugía Periapical con Curetaje Óseo e Injerto de Hueso Liofilizado
-                                        </option>
-                                        <option>Consulta Mensual, Control de Ortodoncia con Brackets</option>
-                                        <option>Consulta Mensual, Control de Ortodoncia Invisible</option>
-                                        <option>Consulta Mensual, Control de Ortodoncia Interceptiva</option>
-                                        <option>Consultas Mensuales (12 – 24 aprox.): Incluye Todos los Materiales
-                                                Necesarios
-                                                para la Consulta</option>
-                                        <option>Consulta Mensual de Ortodoncia Invisible Con Escaneo en 3D</option>
-                                        <option>Consulta mensual de Ortodoncia Invisible Sin Escaneo en 3D</option>
-                                        <option>Corona Transicional de Resina</option>
-                                        <option>Corona (unidad) de Porcelana (Funda Dental Completa Estética de
-                                                Cerámica)
-                                        </option>
-                                        <option>Corona (unidad) de Zirconio – Porcelana (Funda dental completa estética
-                                                de
-                                                Zirconio con Cerámica)</option>
-                                        <option>Curetaje Cerrado con Raspado y Alisado Radicular</option>
-                                        <option>Curetaje Óseo e Injerto de Hueso Liofilizado</option>
-                                        <option>Curetaje Óseo, Membrana Colágena e Injerto de Hueso Liofilizado</option>
-                                        <option>Diagnóstico y Presentación de Caso Clínico de Especialidad</option>
-                                        <option>Diseño de Sonrisa con Carillas de Porcelana de Alta Estética</option>
-                                        <option>Diseño de Sonrisa con Resina Híbrida Submicrónica de Alta Estética
-                                        </option>
-                                        <option>Escaneo y Planeación Digital Para Diseño de Sonrisa y/o Rehabilitación
-                                                Protésica
-                                        </option>
-                                        <option>Escaneo 3D</option>
-                                        <option>Extracción Dental</option>
-                                        <option>Extracción Quirúrgica de Órgano Dentario</option>
-                                        <option>Extracción Quirúrgica de 3er molar (Muela del juicio)</option>
-                                        <option>Extracción Quirúrgica Con Curetaje Óseo</option>
-                                        <option>Extracción Quirúrgica con Curetaje Óseo e injerto de Hueso Liofilizado
-                                        </option>
-                                        <option>Extracción Quirúrgica con Curetaje Óseo, Membrana Colágena e Injerto de
-                                                Hueso
-                                                Liofilizado</option>
-                                        <option>Ferulización Para Control de Movilidad Dental</option>
-                                        <option>Ferulización de Diente Póntico con Fibra de Vidrio</option>
-                                        <option>Ferulización Dental con Cinta de Fibra de Vidrio y Resina de Alta Carga
-                                        </option>
-                                        <option>Gingivoplastía para Diseño de Sonrisa (Cirugía Estética de las Encías)
-                                        </option>
-                                        <option>Guarda Oclusal (Dispositivo para el control del Bruxismo)</option>
-                                        <option>Implante de Titanio (colocación Quirúrgica y Rehabilitación Protésica
-                                                Cinta de
-                                                Fibra de Vidrio y Resina de Alta Carga)</option>
-                                        <option>Incremento por Brackets Estéticos de Porcelana</option>
-                                        <option>Limpieza Dental Profesional Con Equipo de Ultrasonido y Aeropulido
-                                        </option>
-                                        <option>Mock up de Resina Bisacrílica para Diseño de Sonrisa</option>
-                                        <option>Pago Inicial Total: Correspondiente al Montaje de Aparatología
-                                                Ortodóncica
-                                        </option>
-                                        <option>Pago Inicial: Tratamiento de Ortodoncia en Dientes Inferiores (Brackets
-                                                Estéticos)</option>
-                                        <option>Pago Inicial: Tratamiento de Ortodoncia en Dientes Inferiores (Brackets
-                                                Metálicos)</option>
-                                        <option>Pago Inicial: Tratamiento de Ortodoncia en Dientes Superiores (Brackets
-                                                Estéticos)</option>
-                                        <option>Pago Inicial: Tratamiento de Ortodoncia en Dientes Superiores (Brackets
-                                                Metálicos)</option>
-                                        <option>Pago inicial: Tratamiento Ortodóncico con Alineadores Invisibles
-                                                Removibles
-                                        </option>
-                                        <option>Placa activa con Tornillo de Expansión Inferior</option>
-                                        <option>Placa activa con Tornillo de Expansión Superior</option>
-                                        <option>Prótesis Lucitone (Teflón Termo - flexible) removible, unilateral de
-                                                Alta
-                                                Estética</option>
-                                        <option>Prótesis Parcial Removible Bilateral Superior con Estructura Metálica
-                                        </option>
-                                        <option>Prótesis Parcial Removible Bilateral Inferior con Estructura Metálica
-                                        </option>
-                                        <option>Pulido y Mantenimiento de Resinas al Alto Brillo</option>
-                                        <option>Radiografía Periapical Digital</option>
-                                        <option>Reconstrucción de Bordes Incisales con Resina Híbrida Submicrónica
-                                        </option>
-                                        <option>Reconstrucción con Endoposte(s) de Fibra de vidrio y Resina Core
-                                        </option>
-                                        <option>Reconstrucción con Poste Post Tratamiento de Endodoncia</option>
-                                        <option>Registros Fotográficos, Radiográficos y Escaneo de Estudio Para Diseño
-                                                de
-                                                Sonrisa y/o Rehabilitación Protésica</option>
-                                        <option>Regularización del Proceso Alveolar Post Extracción Quirúrgica</option>
-                                        <option>Rehabilitación de Implante con Corona de Porcelana y Aditamentos de
-                                                Titanio
-                                        </option>
-                                        <option>Resina Híbrida Submicrónica Cervical (Restauración del Cuello del
-                                                Diente)
-                                        </option>
-                                        <option>Resina Híbrida Submicrónica Oclusal (Material de Obturación Estético de
-                                                Alta
-                                                Resistencia)</option>
-                                        <option>Resina Híbrida Submicrónica Proximal (Material de Obturación Estético de
-                                                Alta
-                                                Resistencia)</option>
-                                        <option>Retenedor Ortodóncico Fijo Twist – Flex</option>
-                                        <option>Retenedor Ortodóncico Removible Superior Tipo Essix</option>
-                                        <option>Retiro a Aparatología Ortodóncica Fija y Pulido Dental</option>
-                                        <option>Retiro a Aparatología Ortodóncica Fija Colocadas Previamente en Otro
-                                                Consultorio
-                                                y Pulido Dental</option>
-                                        <option>Retiro de Restauraciones de Resina Colocadas Previamente</option>
-                                        <option>Retiro de Restauraciones de Cerámica Colocadas Previamente en Otro
-                                                Consultorio
-                                        </option>
-                                        <option>Retiro de Restauraciones de Resina Colocadas Previamente en Otro
-                                                Consultorio
-                                        </option>
-                                        <option>Retratamiento de Endodoncia</option>
-                                        <option>Selladores (Material preventivo a base de Resina Híbrida Submicrónica
-                                                Fluida)
-                                        </option>
-                                        <option>Table Top de Resina Híbrida Submicrónica Estampada Para Levantamiento de
-                                                Mordida
-                                        </option>
-                                        <option>Tratamiento de Endodoncia</option>
-                                        <option>Vonlay de Cerámica (Restauración Oclusal Estética Amplia Procesada en
-                                                Porcelana)
-                                        </option>
-                                        <option>Vonlay de Resina (Restauración Oclusal Estética Amplia Procesada en
-                                                Resina
-                                                Híbrida Submicrónica)</option>
                                 </select>
                         </div>
                         <div>
@@ -354,7 +213,58 @@ Presupuesto -->
 
                         }
                 </script>
+                <hr>
+                <div class="grid grid-cols-3 text-center items-start mb-4">
 
+                        <div>
+                                <p class="block text-sm font-medium text-gray-700 mb-1">Total:</p>
+                                <p id="total" class="text-gray-800 font-bold text-lg">$0</p>
+                        </div>
+
+                        <div>
+                                <p class="block text-sm font-medium text-blue-800">Total con Descuento:</p>
+                                <p id="total-descuento" class="text-blue-800 font-bold text-lg">$ 0</p>
+                        </div>
+
+                        <div>
+                                <p class="block text-sm font-medium text-blue-800 ">Tipo de Descuento</p>
+                                <select id="tipo-descuento"
+                                        class="w-full border border-gray-300 bg-gray-100 text-gray-700 rounded p-4 h-16 focus:outline-none">
+                                        <option value="">Seleccione</option>
+                                        <option value="internet">Internet</option>
+                                        <option value="especial">Especial</option>
+                                        <option value="facebook">Facebook</option>
+                                        <option value="instagram">Instagram</option>
+                                        <option value="doctora">Doctoralia</option>
+
+                                        <option value="otro">Otro</option>
+                                </select>
+                        </div>
+                </div>
+
+                <p class="block text-sm font-medium text-blue-800">Descuento Total: <span id="descuento-total"
+                                class="font-bold">$ 0</span></p>
+                </div>
+
+
+                <div class="font-sans text-gray-800 p-8">
+                        <ul class="list-disc pl-5 space-y-2 text-sm text-blue-800">
+                                <li>
+                                        El costo de las consultas ya se encuentra incluido en los presupuestos.
+                                </li>
+                                <li>
+                                        No se incluyen tratamientos adicionales que pudiesen ser necesarios y que
+                                        no estén reflejados en el presente presupuesto.
+                                </li>
+                                <li>
+                                        Los descuentos correspondientes ya están aplicados y reflejados en el
+                                        costo de cada tratamiento.
+                                </li>
+                        </ul>
+
+                        <div class="text-center mt-20 mb-10 text-xl font-semibold text-blue-700">
+                                FORMA DE PAGO
+                        </div>
 
         </form>
         </main>
