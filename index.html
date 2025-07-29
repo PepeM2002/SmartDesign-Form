@@ -170,7 +170,7 @@ Presupuesto -->
                                         Selecciona un tratamiento
                                 </label>
                                 <select id="tratamiento" name="tratamiento"
-                                        class="w-2/3  border border-gray-300 bg-gray-100 py-2 px-2 text-sm rounded focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+                                        class="w-full  border border-gray-300 bg-gray-100 py-2 px-2 text-sm rounded focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
                                         <option value="" selected>-- Selecciona una opción --</option>
                                         <option>Ameloplastía y/o Ajuste Oclusal Selectivo</option>
                                         <option>Aparato de Expansión HYRAX</option>
@@ -344,6 +344,15 @@ Presupuesto -->
 
                         precioInput.addEventListener('input', calcularTotal);
                         descuentoInput.addEventListener('input', calcularTotal);
+
+
+                        const addButton = document.createElement('button');
+                        addButton.textContent = 'Agregar Tratamiento';
+
+                        function addTratamiento() {
+
+
+                        }
                 </script>
 
 
