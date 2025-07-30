@@ -11,14 +11,29 @@
         <title>Cotizador</title>
 
 </head>
+<style>
+        form {
+                opacity: 0;
+                transform: translateY(40px) scale(0.98);
+                animation: fadeInUp 0.8s cubic-bezier(.4, 0, .2, 1) forwards;
+        }
+
+        @keyframes fadeInUp {
+                to {
+                        opacity: 1;
+                        transform: translateY(0) scale(1);
+                }
+        }
+</style>
 
 <body class="bg-[#E7F5FE] min-h-screen flex items-center justify-center">
         <main class="mx-auto mt-12 text-center  w-full">
-                <h1 class="text-3xl font-bold  mb-8">
-                        Cotizador - SmartDesign
-                </h1>
+                <div class="flex flex-col items-center mb-8">
+                        <img class=" mb-4" src="./assets/Recurso-4.png" alt="Logo SmartDesign">
+
+                </div>
                 <form
-                        class="bg-white rounded-lg  max-w-[90%] shadow-md shadow-blue-200 shadow-xl  p-5 space-y-6 mx-auto">
+                        class="fadeInUp bg-white rounded-lg  max-w-[90%] shadow-md shadow-blue-200 shadow-xl  p-5 space-y-6 mx-auto">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="flex flex-col gap-2">
                                         <label for="nombre" class="text-lg font-semibold text-gray-700">Nombre del
@@ -306,7 +321,46 @@
                         <div class="text-center mt-20 mb-10 text-xl font-semibold text-blue-700">
                                 FORMA DE PAGO
                         </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                <div class="flex flex-col">
+                                        <label for="dia_tratamiento" class="text-blue-700 text-sm font-semibold mb-1">El
+                                                día del tratamiento</label>
+                                        <input type="date" id="dia_tratamiento" name="dia_tratamiento"
+                                                class=" focus:outline-none focus:ring-2 focus:ring-blue-400 border border-gray-300 p-2 rounded-md w-full">
+                                </div>
 
+                                <div class="flex flex-col">
+                                        <label for="inicio_tratamiento"
+                                                class="focus:outline-none focus:ring-2 focus:ring-blue-400 text-blue-700 text-sm font-semibold mb-1">Al
+                                                inicio del
+                                                tratamiento</label>
+                                        <input type="date" id="inicio_tratamiento" name="inicio_tratamiento"
+                                                class="focus:outline-none focus:ring-2 focus:ring-blue-400 border border-gray-300 p-2 rounded-md w-full">
+                                </div>
+
+                                <div class="flex flex-col">
+                                        <label for="antes_final_tratamiento"
+                                                class="text-blue-700 text-sm font-semibold mb-1">Antes del final del
+                                                tratamiento</label>
+                                        <input type="date" id="antes_final_tratamiento" name="antes_final_tratamiento"
+                                                class="focus:outline-none focus:ring-2 focus:ring-blue-400 border border-gray-300 p-2 rounded-md w-full">
+                                </div>
+                        </div>
+                        <p class=" text-sm mb-6 text-blue-700">
+                                <strong class="text-blue-700">Nota:</strong> Estos presupuestos son de carácter
+                                informativo y pueden sufrir modificaciones por imprevistos que se presenten durante el
+                                tratamiento. Todas las cantidades de este presupuesto se expresan en moneda nacional y
+                                tienen una vigencia de 15 días a partir de su fecha de expedición.
+                        </p>
+
+                        <p class="text-center text-blue-600 font-bold mb-8">
+                                - En ningún caso el presente presupuesto representa un recibo de pago -
+                        </p>
+
+                        <button type="submit"
+                                class="focus:outline-none focus:ring-2 focus:ring-blue-400 bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors duration-200 cursor-pointer">
+                                Enviar
+                        </button>
                 </form>
         </main>
 </body>
