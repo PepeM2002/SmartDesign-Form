@@ -1,3 +1,39 @@
 {
-  "odondograma": ["muela.png", "diente.png", "incisivo.png"]
+  "odontograma_superior":[
+  "./assets/D18.png", 
+  "./assets/D17.png",
+  "./assets/D16.png",
+  "./assets/D15.png",
+  "./assets/D14.png",
+  "./assets/D13.png",
+  "./assets/D12.png",
+  "./assets/D11.png",
+  "./assets/D21.png",
+  "./assets/D22.png",
+  "./assets/D23.png",
+  "./assets/D24.png",
+  "./assets/D25.png",
+  "./assets/D26.png",
+  "./assets/D27.png",
+  "./assets/D28.png"
+  ],
+
+  "odontograma_inferior":[
+  "./assets/D48.png",
+  "./assets/D47.png",
+  "./assets/D46.png",
+  "./assets/D45.png",
+  "./assets/D44.png",
+  "./assets/D43.png",
+  "./assets/D42.png",
+  "./assets/D41.png",
+  "./assets/D31.png",
+  "./assets/D32.png",
+  "./assets/D33.png",
+  "./assets/D34.png",
+  "./assets/D35.png",
+  "./assets/D36.png",
+  "./assets/D37.png",
+  "./assets/D38.png"]
+
 }
