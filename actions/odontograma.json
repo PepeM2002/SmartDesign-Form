@@ -1,5 +1,3 @@
 {
-  "odondograma_superior": ["muela.png", "diente.png", "incisivo.png"],
-
-  "odondograma_inferior": ["muela.png", "diente.png", "incisivo.png"]
+  "odondograma": ["muela.png", "diente.png", "incisivo.png"]
 }
