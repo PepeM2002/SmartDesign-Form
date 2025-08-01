@@ -5,11 +5,9 @@
         <meta charset="UTF-8">
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cotizador </title>
+        <title>Cotizador</title>
         <script src="./actions/selection.js"></script>
         <script src="./actions/send.js"></script>
-
-        <title>Cotizador</title>
 
 </head>
 <style>
@@ -33,43 +31,47 @@
                         <img class=" mb-4" src="./assets/Recurso-4.png" alt="Logo SmartDesign">
 
                 </div>
-                <form
-                        class="fadeInUp bg-white rounded-lg  max-w-[90%] shadow-md shadow-blue-200 shadow-xl  p-5 space-y-6 mx-auto">
+
+                <form method="post" action="./back/guardar.php"
+                        class="fadeInUp bg-white rounded-lg max-w-[90%] shadow-md shadow-blue-200 shadow-xl p-5 space-y-6 mx-auto">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="flex flex-col gap-2">
                                         <label for="nombre" class="text-lg font-semibold text-gray-700">Nombre del
                                                 paciente</label>
-                                        <input id="nombre" type="text" placeholder="Ingresa tu nombre"
-                                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
+                                        <input id="nombre" name="nombre" type="text" placeholder="Ingresa tu nombre"
+                                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                                                required />
                                 </div>
                                 <div class="flex flex-col gap-2">
                                         <label for="fecha" class="text-lg font-semibold text-gray-700">Fecha</label>
-                                        <input id="fecha" type="date"
-                                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
+                                        <input id="fecha" name="fecha" type="date"
+                                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                                                required />
                                 </div>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="flex flex-col gap-2">
                                         <label for="doctor" class="text-lg font-semibold text-gray-700">Valoración
-                                                realizada por
-                                                el Dr</label>
-                                        <select id="doctor"
-                                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+                                                realizada por el Dr</label>
+                                        <select id="doctor" name="doctor"
+                                                class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                                                required>
                                                 <option value="">Selecciona el doctor</option>
-                                                <option value="dr1">Gianmarco Terry</option>
+                                                <option value="Gianmarco Terry">Gianmarco Terry</option>
                                         </select>
                                 </div>
                                 <div class="flex flex-col gap-2">
                                         <label for="expediente" class="text-lg font-semibold text-gray-700">Expediente
                                                 N<sup>o</sup></label>
-                                        <input id="expediente" type="text" placeholder="Ingresa el número de expediente"
+                                        <input id="expediente" type="text" name="expediente"
+                                                placeholder="Ingresa el número de expediente"
                                                 class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
                                 </div>
                         </div>
                         <div class="flex flex-col gap-2">
                                 <label for="correo" class="text-lg font-semibold text-gray-700">Correo
                                         Electrónico</label>
-                                <input id="correo" type="email" placeholder="Ingresa tu correo"
+                                <input id="correo" type="email" name="correo" placeholder="Ingresa tu correo"
                                         class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
                         </div>
                         <div class="flex flex-col gap-2">
@@ -84,6 +86,7 @@
 
 
                         <div class="grid grid-cols-16 gap-1 text-sm text-blue-700 text-center mb-1">
+                                <!-- Dientes superiores -->
                                 <span>
                                         18<br>
                                         <input type="checkbox" id="diente-18" name="diente-18">
@@ -151,19 +154,23 @@
                         </div>
                         <div id="odontograma-superior" class="grid grid-cols-16 gap-1 mb-4"></div>
                         <script>
-                                fetch('./odontograma.json')
+                                fetch('./actions/odontograma.json')
                                         .then(response => response.json())
                                         .then(data => {
                                                 const container = document.getElementById('odontograma-superior');
-                                                data.superior.forEach(diente => {
-                                                        const div = document.createElement('div');
-                                                        div.className = "aspect-square border-2 border-blue-500 rounded flex items-center justify-center";
-                                                        div.innerHTML = `<img src="/tooth.svg" alt="Diente ${diente}" class="h-8" />`;
-                                                        container.appendChild(div);
-                                                });
+                                                if (data.odontograma_superior) {
+                                                        data.odontograma_superior.forEach(src => {
+                                                                const div = document.createElement('div');
+                                                                div.className = "aspect-square border-2 border-blue-500 rounded flex items-center justify-center";
+                                                                div.innerHTML = `<img src="${src}" alt="Diente" class="h-8" />`;
+                                                                container.appendChild(div);
+                                                        });
+                                                }
+                                        })
+                                        .catch(error => {
+                                                console.error('Error cargando el odontograma superior:', error);
                                         });
                         </script>
-
 
                         <div class="grid grid-cols-16 gap-1 text-sm text-blue-700 text-center mb-1">
                                 <span>
@@ -231,46 +238,49 @@
                                         <input type="checkbox" id="diente-38" name="diente-38">
                                 </span>
                         </div>
-                        <div id="odontograma-superior" class="grid grid-cols-16 gap-1 mb-4"></div>
+                        <div id="odontograma-inferior" class="grid grid-cols-16 gap-1 mb-4"></div>
+
                         <script>
-                                fetch('./odontograma.json')
+                                fetch('./actions/odontograma.json')
                                         .then(response => response.json())
                                         .then(data => {
-                                                const container = document.getElementById('odontograma-superior');
-                                                data.superior.forEach(diente => {
-                                                        const div = document.createElement('div');
-                                                        div.className = "aspect-square border-2 border-blue-500 rounded flex items-center justify-center";
-                                                        div.innerHTML = `<img src="/tooth.svg" alt="Diente ${diente}" class="h-8" />`;
-                                                        container.appendChild(div);
-                                                });
+                                                const container = document.getElementById('odontograma-inferior');
+                                                if (data.odontograma_inferior) {
+                                                        data.odontograma_inferior.forEach(src => {
+                                                                const div = document.createElement('div');
+                                                                div.className = "aspect-square border-2 border-blue-500 rounded flex items-center justify-center";
+                                                                div.innerHTML = `<img src="${src}" alt="Diente" class="h-8" />`;
+                                                                container.appendChild(div);
+                                                        });
+                                                }
+                                        })
+                                        .catch(error => {
+                                                console.error('Error cargando el odontograma inferior:', error);
                                         });
                         </script>
-
-
-
-
 
                         <div class="text-center text-blue-800 font-bold text-xl mb-4">
                                 PRESUPUESTO
                         </div>
 
-
                         <div class="flex flex-wrap items-end gap-3">
                                 <div>
-                                        <label for="tratamiento" class="block text-sm font-medium text-gray-700 mb-1">
-                                                Selecciona un tratamiento
-                                        </label>
+                                        <label for="tratamiento"
+                                                class="block text-sm font-medium text-gray-700 mb-1">Selecciona un
+                                                tratamiento</label>
                                         <select id="tratamiento-select" name="tratamiento"
-                                                class="w-full  border border-gray-300 bg-gray-100 py-2 px-2 text-sm rounded focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+                                                class="w-full border border-gray-300 bg-gray-100 py-2 px-2 text-sm rounded focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
                                                 <option value="" selected>-- Selecciona una opción --</option>
                                         </select>
                                 </div>
+
                                 <div>
                                         <label for="precio"
                                                 class="block text-sm font-medium text-gray-700 mb-1">Precio</label>
                                         <input type="number" id="precio" name="precio" placeholder="Ingresa el precio"
                                                 class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition w-32" />
                                 </div>
+
                                 <div>
                                         <label for="descuento"
                                                 class="block text-sm font-medium text-gray-700 mb-1">Descuento</label>
@@ -278,49 +288,39 @@
                                                 placeholder="Ingresa el descuento"
                                                 class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition w-32" />
                                 </div>
-                                <div class="text-lg font-bold text-blue-700 ml-auto">
-                                        Total: <span id="total">0</span>
+
+                                <div>
+                                        <button id="add-btn" type="button"
+                                                class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition mt-6">Agregar</button>
                                 </div>
                         </div>
-                        <script>
-                                const precioInput = document.getElementById('precio');
-                                const descuentoInput = document.getElementById('descuento');
-                                const totalSpan = document.getElementById('total');
 
-                                function calcularTotal() {
-                                        const precio = parseFloat(precioInput.value) || 0;
-                                        const descuento = parseFloat(descuentoInput.value) || 0;
-                                        const total = Math.max(precio - descuento, 0);
-                                        totalSpan.textContent = total.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' });
-                                }
+                        <div class="mt-4">
+                                <table class="w-full text-sm border border-collapse border-gray-300 mt-4">
+                                        <thead class="bg-gray-100">
+                                                <tr>
+                                                        <th class="border px-2 py-1">Tratamiento</th>
+                                                        <th class="border px-2 py-1">Precio</th>
+                                                        <th class="border px-2 py-1">Descuento</th>
+                                                        <th class="border px-2 py-1">Total</th>
+                                                </tr>
+                                        </thead>
+                                        <tbody id="tabla-tratamientos"></tbody>
+                                </table>
+                        </div>
 
-                                precioInput.addEventListener('input', calcularTotal);
-                                descuentoInput.addEventListener('input', calcularTotal);
-
-
-                                const addButton = document.createElement('button');
-                                addButton.textContent = 'Agregar Tratamiento';
-
-                                function addTratamiento() {
-
-
-                                }
-                        </script>
-                        <hr>
+                        <hr class="my-4">
                         <div class="grid grid-cols-3 text-center items-start mb-4">
-
                                 <div>
                                         <p class="block text-sm font-medium text-gray-700 mb-1">Total:</p>
-                                        <p id="total" class="text-gray-800 font-bold text-lg">$0</p>
+                                        <p id="total-sin-descuento" class="text-gray-800 font-bold text-lg">$0</p>
                                 </div>
-
                                 <div>
                                         <p class="block text-sm font-medium text-blue-800">Total con Descuento:</p>
-                                        <p id="total-descuento" class="text-blue-800 font-bold text-lg">$ 0</p>
+                                        <p id="total-con-descuento" class="text-blue-800 font-bold text-lg">$0</p>
                                 </div>
-
                                 <div>
-                                        <p class="block text-sm font-medium text-blue-800 ">Tipo de Descuento</p>
+                                        <p class="block text-sm font-medium text-blue-800">Tipo de Descuento</p>
                                         <select id="tipo-descuento"
                                                 class="w-full border border-gray-300 bg-gray-100 text-gray-700 rounded p-4 h-16 focus:outline-none">
                                                 <option value="">Seleccione</option>
@@ -329,15 +329,102 @@
                                                 <option value="facebook">Facebook</option>
                                                 <option value="instagram">Instagram</option>
                                                 <option value="doctora">Doctoralia</option>
-
                                                 <option value="otro">Otro</option>
                                         </select>
                                 </div>
                         </div>
-
                         <p class="block text-sm font-medium text-blue-800">Descuento Total: <span id="descuento-total"
-                                        class="font-bold">$ 0</span></p>
-                        </div>
+                                        class="font-bold">$0</span></p>
+
+
+                        <input type="hidden" name="tratamientos_json" id="tratamientos_json">
+
+                        <script>
+                                const tratamientos = [];
+                                let tratamientosDisponibles = [];
+
+                                const tratamientoSelect = document.getElementById('tratamiento-select');
+                                const precioInput = document.getElementById('precio');
+                                const descuentoInput = document.getElementById('descuento');
+                                const addBtn = document.getElementById('add-btn');
+                                const tablaBody = document.getElementById('tabla-tratamientos');
+
+                                const totalSinDescuentoEl = document.getElementById('total-sin-descuento');
+                                const totalConDescuentoEl = document.getElementById('total-con-descuento');
+                                const descuentoTotalEl = document.getElementById('descuento-total');
+                                const tratamientosJSON = document.getElementById('tratamientos_json');
+
+                                fetch('../actions/tratamientos.json')
+                                        .then(response => response.json())
+                                        .then(data => {
+                                                tratamientosDisponibles = data.tratamientos || [];
+
+                                                tratamientosDisponibles.forEach((tratamiento, index) => {
+                                                        const option = document.createElement('option');
+                                                        option.value = index;
+                                                        option.textContent = tratamiento;
+                                                        tratamientoSelect.appendChild(option);
+                                                });
+                                        })
+                                        .catch(error => {
+                                                console.error('Error al cargar tratamientos:', error);
+                                        });
+
+                                function actualizarTabla() {
+                                        tablaBody.innerHTML = '';
+
+                                        let totalSinDescuento = 0;
+                                        let totalConDescuento = 0;
+                                        let descuentoTotal = 0;
+
+                                        tratamientos.forEach(t => {
+                                                const total = Math.max(t.precio - t.descuento, 0);
+                                                totalSinDescuento += t.precio;
+                                                totalConDescuento += total;
+                                                descuentoTotal += t.descuento;
+
+                                                const row = document.createElement('tr');
+                                                row.innerHTML = `
+        <td class="border px-2 py-1">${t.nombre}</td>
+        <td class="border px-2 py-1">$${t.precio.toLocaleString('es-MX')}</td>
+        <td class="border px-2 py-1">$${t.descuento.toLocaleString('es-MX')}</td>
+        <td class="border px-2 py-1">$${total.toLocaleString('es-MX')}</td>
+      `;
+                                                tablaBody.appendChild(row);
+                                        });
+
+                                        totalSinDescuentoEl.textContent = totalSinDescuento.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' });
+                                        totalConDescuentoEl.textContent = totalConDescuento.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' });
+                                        descuentoTotalEl.textContent = descuentoTotal.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' });
+                                }
+
+                                addBtn.addEventListener('click', (event) => {
+                                        event.preventDefault();
+
+                                        const selectedIndex = tratamientoSelect.value;
+                                        const nombre = tratamientosDisponibles[selectedIndex];
+                                        const precio = parseFloat(precioInput.value) || 0;
+                                        const descuento = parseFloat(descuentoInput.value) || 0;
+
+                                        if (!nombre || precio <= 0) {
+                                                alert('Selecciona un tratamiento válido y un precio mayor a 0.');
+                                                return;
+                                        }
+
+                                        tratamientos.push({ nombre, precio, descuento });
+                                        actualizarTabla();
+
+                                        tratamientoSelect.value = '';
+                                        precioInput.value = '';
+                                        descuentoInput.value = '';
+                                });
+
+                                // Antes de enviar el formulario, guardar JSON en input oculto
+                                document.querySelector('form').addEventListener('submit', function () {
+                                        tratamientosJSON.value = JSON.stringify(tratamientos);
+                                });
+                        </script>
+
 
                         <div class="text-center mt-20 mb-10 text-xl font-semibold text-blue-700">
                                 FORMA DE PAGO
