@@ -1,6 +1,4 @@
 <?php
-<<<<<<< HEAD
-// back/guardar.php
 header("Content-Type: text/html; charset=utf-8");
 
 $servername = "localhost";
@@ -91,7 +89,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-=======
+
 $conn = new mysqli("localhost", "root", "", "clinica_odonto");
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
@@ -152,4 +150,3 @@ if ($stmt->execute()) {
 $stmt->close();
 $conn->close();
 ?>
->>>>>>> 335e78a6195129d93cf4b17562b9f8ab2c49f2d1
