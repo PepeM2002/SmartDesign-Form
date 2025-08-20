@@ -6,6 +6,10 @@
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cotizador</title>
+<<<<<<< HEAD
+=======
+        <script src="./actions/selection.js"></script>
+>>>>>>> 335e78a6195129d93cf4b17562b9f8ab2c49f2d1
         <script src="./actions/send.js"></script>
 
 </head>
@@ -35,7 +39,10 @@
                         </a>
                 </div>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 335e78a6195129d93cf4b17562b9f8ab2c49f2d1
                 <form method="post" action="./back/guardar.php"
                         class="fadeInUp bg-white rounded-lg max-w-[90%] shadow-md shadow-blue-200 shadow-xl p-5 space-y-6 mx-auto">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -285,6 +292,7 @@
                                                 class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition w-32" />
                                 </div>
 
+<<<<<<< HEAD
                                 <div>
                                         <label for="cantidad"
                                                 class="block text-sm font-medium text-gray-700 mb-1">Cantidad</label>
@@ -292,6 +300,8 @@
                                                 class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition w-24" />
                                 </div>
 
+=======
+>>>>>>> 335e78a6195129d93cf4b17562b9f8ab2c49f2d1
                                 <div>
                                         <label for="descuento"
                                                 class="block text-sm font-medium text-gray-700 mb-1">Descuento</label>
@@ -306,13 +316,19 @@
                                 </div>
                         </div>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 335e78a6195129d93cf4b17562b9f8ab2c49f2d1
                         <div class="mt-4">
                                 <table class="w-full text-sm border border-collapse border-gray-300 mt-4">
                                         <thead class="bg-gray-100">
                                                 <tr>
                                                         <th class="border px-2 py-1">Tratamiento</th>
+<<<<<<< HEAD
                                                         <th class="border px-2 py-1">Cantidad</th>
+=======
+>>>>>>> 335e78a6195129d93cf4b17562b9f8ab2c49f2d1
                                                         <th class="border px-2 py-1">Precio</th>
                                                         <th class="border px-2 py-1">Descuento</th>
                                                         <th class="border px-2 py-1">Total</th>
@@ -358,7 +374,10 @@
 
                                 const tratamientoSelect = document.getElementById('tratamiento-select');
                                 const precioInput = document.getElementById('precio');
+<<<<<<< HEAD
                                 const cantidadInput = document.getElementById('cantidad'); // 👈 campo de cantidad
+=======
+>>>>>>> 335e78a6195129d93cf4b17562b9f8ab2c49f2d1
                                 const descuentoInput = document.getElementById('descuento');
                                 const addBtn = document.getElementById('add-btn');
                                 const tablaBody = document.getElementById('tabla-tratamientos');
@@ -368,12 +387,17 @@
                                 const descuentoTotalEl = document.getElementById('descuento-total');
                                 const tratamientosJSON = document.getElementById('tratamientos_json');
 
+<<<<<<< HEAD
                                 // Cargar tratamientos desde JSON y poblar el select
                                 fetch('./actions/tratamientos.json')
+=======
+                                fetch('../actions/tratamientos.json')
+>>>>>>> 335e78a6195129d93cf4b17562b9f8ab2c49f2d1
                                         .then(response => response.json())
                                         .then(data => {
                                                 tratamientosDisponibles = data.tratamientos || [];
 
+<<<<<<< HEAD
                                                 // Agregar opción por defecto
                                                 const defaultOption = document.createElement('option');
                                                 defaultOption.value = '';
@@ -383,6 +407,8 @@
                                                 tratamientoSelect.appendChild(defaultOption);
 
                                                 // Agregar las opciones disponibles
+=======
+>>>>>>> 335e78a6195129d93cf4b17562b9f8ab2c49f2d1
                                                 tratamientosDisponibles.forEach((tratamiento, index) => {
                                                         const option = document.createElement('option');
                                                         option.value = index;
@@ -402,6 +428,7 @@
                                         let descuentoTotal = 0;
 
                                         tratamientos.forEach(t => {
+<<<<<<< HEAD
                                                 const subtotal = t.precio * t.cantidad;
                                                 const desc = Math.min(t.descuento, subtotal); // evitar que desc sea mayor al subtotal
                                                 const total = Math.max(subtotal - desc, 0);
@@ -409,13 +436,24 @@
                                                 totalSinDescuento += subtotal;
                                                 totalConDescuento += total;
                                                 descuentoTotal += desc;
+=======
+                                                const total = Math.max(t.precio - t.descuento, 0);
+                                                totalSinDescuento += t.precio;
+                                                totalConDescuento += total;
+                                                descuentoTotal += t.descuento;
+>>>>>>> 335e78a6195129d93cf4b17562b9f8ab2c49f2d1
 
                                                 const row = document.createElement('tr');
                                                 row.innerHTML = `
         <td class="border px-2 py-1">${t.nombre}</td>
+<<<<<<< HEAD
         <td class="border px-2 py-1">${t.cantidad}</td>
         <td class="border px-2 py-1">$${t.precio.toLocaleString('es-MX')}</td>
         <td class="border px-2 py-1">$${desc.toLocaleString('es-MX')}</td>
+=======
+        <td class="border px-2 py-1">$${t.precio.toLocaleString('es-MX')}</td>
+        <td class="border px-2 py-1">$${t.descuento.toLocaleString('es-MX')}</td>
+>>>>>>> 335e78a6195129d93cf4b17562b9f8ab2c49f2d1
         <td class="border px-2 py-1">$${total.toLocaleString('es-MX')}</td>
       `;
                                                 tablaBody.appendChild(row);
@@ -430,6 +468,7 @@
                                         event.preventDefault();
 
                                         const selectedIndex = tratamientoSelect.value;
+<<<<<<< HEAD
 
                                         if (selectedIndex === '') {
                                                 alert('Debes seleccionar un tratamiento válido.');
@@ -457,12 +496,35 @@
                                 });
 
                                 // Guardar JSON en input oculto antes de enviar
+=======
+                                        const nombre = tratamientosDisponibles[selectedIndex];
+                                        const precio = parseFloat(precioInput.value) || 0;
+                                        const descuento = parseFloat(descuentoInput.value) || 0;
+
+                                        if (!nombre || precio <= 0) {
+                                                alert('Selecciona un tratamiento válido y un precio mayor a 0.');
+                                                return;
+                                        }
+
+                                        tratamientos.push({ nombre, precio, descuento });
+                                        actualizarTabla();
+
+                                        tratamientoSelect.value = '';
+                                        precioInput.value = '';
+                                        descuentoInput.value = '';
+                                });
+
+                                // Antes de enviar el formulario, guardar JSON en input oculto
+>>>>>>> 335e78a6195129d93cf4b17562b9f8ab2c49f2d1
                                 document.querySelector('form').addEventListener('submit', function () {
                                         tratamientosJSON.value = JSON.stringify(tratamientos);
                                 });
                         </script>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 335e78a6195129d93cf4b17562b9f8ab2c49f2d1
 
                         <div class="text-center mt-20 mb-10 text-xl font-semibold text-blue-700">
                                 FORMA DE PAGO
